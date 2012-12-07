@@ -1,0 +1,19 @@
+<?php
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+echo $this->doctype();
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <?php 
+        $this->headLink()->appendStylesheet($this->baseUrl() . '/css/main.css'); 
+        echo $this->headLink();
+    ?>
+</head>
+
+<body>
+
+    <?php echo $this->layout()->content; ?>
+
+</body>
+
+</html>
