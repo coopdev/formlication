@@ -2,13 +2,44 @@
 $form = $this->element;
 ?>
 
+
 <form method="POST">
 
-   Name:
-   <?php echo $form->studentName ?>
+   <div id='studentSection'>
+      
+      <b> STEP 1: </b> To be completed by the student <br /> <br />
+      
+      Name:
+      <?php echo $form->studentName ?>
 
-   Banner ID:
-   <?php echo $form->bannerId ?>
+      Banner ID:
+      <?php echo $form->bannerId ?>
+
+      Major:
+      <?php echo $form->major ?> <br /><br />
+
+      Address:
+      <?php echo $form->address ?> <br /><br />
+
+      Phone:
+      <?php echo $form->phone ?> <br /><br />
+
+      In "semester" at HonCC, I: <br />
+      <?php echo $form->semStatus ?> <br /> <br />
+
+      I am requesting an exception to the graduation options in the current catalog. I would 
+      like to request that I be allowed to follow the <?php echo $form->requestedRequirements ?> <br /> 
+      requirements instead. The reason for this 
+      request is as follows: <br />
+      <?php echo $form->reasonForRequest ?> <br />
+      I understand that if I take a break in enrollment for one year or more, I will follow 
+      requirements in 
+      effect when I reenroll. <br /> <br />
+
+      <?php echo $form->studentAgreement ?>
+      
+   </div> <!-- END STUDENT SECTION -->
+
 
    <br /><br />
 
@@ -16,3 +47,17 @@ $form = $this->element;
 
 
 </form>
+
+
+
+<script type="text/javascript">
+   $(document).ready(function() {
+      //$("div#studentSection").hide();
+
+
+
+   });
+
+
+
+</script>

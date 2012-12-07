@@ -33,14 +33,47 @@ class Application_Form_GradRequest extends Application_Form_Form
 
     public function makeFields()
     {
+       //$studentSection = new Zend_Form_SubForm();
+       //$studentSection->setElementsBelongTo('studentSection');
+       
+       
        $name = $this->getCommonTbox('studentName', 'Name:');
        $bannerId = $this->getCommonTbox('bannerId', 'Banner ID:');
+       $major = $this->getCommonTbox('major', 'Major:');
+       $address = $this->getCommonTbox('address', 'Address:');
+       $address->setAttrib('size', '79');
+       $phone = $this->getCommonTbox('phone', 'Phone:');
+       $email = $this->getEmailTbox('email', 'E-mail:');
+
+       $semStatus = new Zend_Form_Element_MultiCheckbox('semStatus');
+       $semStatus->setMultiOptions( array('1' => 'Was a New/Returning',
+                                     '2' => 'Changed major',
+                                     '3' => 'Changed Home Institution to HonCC'))
+                 ->setSeparator("");
+
+       $requestedRequirements = $this->getCommonTbox('requestedRequirements', '');
+       $reasonForRequest = $this->getCommonTbox('reasonForRequest', '');
+       $reasonForRequest->setAttrib('size', '100');
+
+       $studentAgreement = new Zend_Form_Element_MultiCheckbox('studentAgreement');
+       $studentAgreement->setMultiOptions( array('agree' => 'I agree to the terms listed in the agreement.'));
 
 
        $submit = new Zend_Form_Element_Submit('submit');
        $submit->setLabel('Submit');
 
-       $this->addElements( array($name, $bannerId, $submit) );
+       //$studentSection->addElements( array($name, $bannerId, $major, $address, $phone, $email, 
+       //    $semStatus, $requestedRequirements, $reasonForRequest, $studentAgreement, $submit) );
+       
+       //$studentSection->setElementDecorators(array('ViewHelper',
+       //                                  'Errors'
+       //                           ));
+       
+       //$this->addSubform($studentSection, 'studentSection');
+       
+
+       $this->addElements( array($name, $bannerId, $major, $address, $phone, $email, 
+           $semStatus, $requestedRequirements, $reasonForRequest, $studentAgreement, $submit) );
 
     }
 

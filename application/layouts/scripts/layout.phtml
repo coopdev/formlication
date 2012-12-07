@@ -5,12 +5,19 @@ echo $this->doctype();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <?php 
-        $this->headLink()->appendStylesheet($this->baseUrl() . '/css/main.css'); 
+        $this->headLink()->prependStylesheet($this->baseUrl() . '/css/main.css'); 
         echo $this->headLink();
+
+        $this->headScript()->prependFile($this->baseUrl() . '/js/jquery.js');
+
+        echo $this->headScript();
     ?>
 </head>
 
 <body>
+    <?php echo $this->pageTitle ?>
+   
+    <?php echo $this->resultMessage ?>
 
     <?php echo $this->layout()->content; ?>
 

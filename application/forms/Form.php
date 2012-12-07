@@ -23,7 +23,7 @@ class Application_Form_Form extends Zend_Form
         /* Form Elements & Other Definitions Here ... */
     }
 
-/********************************* FORM STRUCTURE METHODS *******************************/
+/********************************* FORM ELEMENT METHODS *******************************/
 
    public function getCommonTbox($name,$label)
    {
@@ -34,8 +34,19 @@ class Application_Form_Form extends Zend_Form
            ->addFilter('StringTrim');
       return $elem;
    }
+   
+   public function getEmailTbox($name,$label)
+   {
+      $elem = new Zend_Form_Element_Text($name);
+      $elem->setLabel($label)
+           ->addFilter('StripTags')
+           ->addFilter('StringTrim')
+           ->setRequired($this->requiredVal)
+           ->addValidator(new Zend_Validate_EmailAddress());
+      return $elem;
+   }
 
-/***************************** END FORM STRUCTURE METHODS *******************************/
+/***************************** END FORM ELEMENT METHODS *******************************/
 
 
 /********************************** FORM DATA METHODS ***********************************/
