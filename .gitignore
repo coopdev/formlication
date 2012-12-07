@@ -1,7 +1,9 @@
 *.swp
 
-doc/*
+docs/*
 
 tests/*
 
 nbproject/*
+
+storage/*

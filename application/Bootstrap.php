@@ -8,8 +8,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 
         $session = new Zend_Session_Namespace();
-        $req = new Zend_Controller_Request_Http();
-        $session->baseUrl = $req->getBaseUrl();
+        $request = new Zend_Controller_Request_Http();
+        $session->baseUrl = $request->getBaseUrl();
     }
 
 

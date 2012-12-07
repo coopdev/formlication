@@ -9,7 +9,7 @@ class Form
     protected $user;
 
     // File path that holds the data.
-    protected $storage = STORAGEDIR . '/form-data.json';
+    //protected $storage = STORAGEDIR . '/form-data.json';
 
     // Root of the users form data.
     protected $data;
@@ -21,7 +21,7 @@ class Form
 
         $formData = file_get_contents($this->storage);
 
-        $formData = json_decode($users);
+        $formData = json_decode($formData);
 
         if (isset($formData->$user)) {
             $this->data = $formData->$user;
