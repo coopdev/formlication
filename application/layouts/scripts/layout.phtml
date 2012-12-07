@@ -14,13 +14,17 @@ echo $this->doctype();
     ?>
 </head>
 
-<body>
-    <?php echo $this->pageTitle ?>
+<div id="container" style="min-width: 900px;">
    
-    <?php echo $this->resultMessage ?>
+   <body>
+       <?php echo $this->pageTitle ?>
+      
+       <?php echo $this->resultMessage ?>
 
-    <?php echo $this->layout()->content; ?>
+       <?php echo $this->layout()->content; ?>
 
-</body>
+   </body>
+
+</div>
 
 </html>

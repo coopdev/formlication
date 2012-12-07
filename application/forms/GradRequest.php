@@ -33,9 +33,6 @@ class Application_Form_GradRequest extends Application_Form_Form
 
     public function makeFields()
     {
-       //$studentSection = new Zend_Form_SubForm();
-       //$studentSection->setElementsBelongTo('studentSection');
-       
        
        $name = $this->getCommonTbox('studentName', 'Name:');
        $bannerId = $this->getCommonTbox('bannerId', 'Banner ID:');
@@ -61,16 +58,6 @@ class Application_Form_GradRequest extends Application_Form_Form
 
        $submit = new Zend_Form_Element_Submit('submit');
        $submit->setLabel('Submit');
-
-       //$studentSection->addElements( array($name, $bannerId, $major, $address, $phone, $email, 
-       //    $semStatus, $requestedRequirements, $reasonForRequest, $studentAgreement, $submit) );
-       
-       //$studentSection->setElementDecorators(array('ViewHelper',
-       //                                  'Errors'
-       //                           ));
-       
-       //$this->addSubform($studentSection, 'studentSection');
-       
 
        $this->addElements( array($name, $bannerId, $major, $address, $phone, $email, 
            $semStatus, $requestedRequirements, $reasonForRequest, $studentAgreement, $submit) );
